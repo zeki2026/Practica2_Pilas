@@ -12,12 +12,13 @@ public class Main {
         String expresion;
         Scanner scan = new Scanner(System.in);
         boolean resultado;
-        int res;
+        int res, res2;
 
         System.out.print("Escribe una expresion separada por espacios: ");
         expresion = scan.nextLine();
 
         Postfijo postfijo = new Postfijo(pila,expresion);
+        Prefijo prefijo = new Prefijo(pila,expresion);
 
         resultado = postfijo.balanceo();
         
@@ -25,10 +26,19 @@ public class Main {
             System.out.println("La expresion no esta correctamente balanceada: ");
         }else{
             System.out.println("La expresion esta correctamente balanceada: ");
-            System.out.print("Notacion Postfija: ");
+
+            System.out.print("\nNotacion Prefija: ");
+            prefijo.imprimir_prefijo();
+
+            System.out.print("\notacion Postfija: ");
             postfijo.imprimir_postfijo();
+
+            
+            res2 = prefijo.evaluacion_prefijo();
+            System.out.println("\nEvaluacion Postfija: " + res2);
+
             res = postfijo.evaluacion_postfijo();
-            System.out.println("\nEvaluacion Postfija: " + res);
+            System.out.println("Evaluacion Postfija: " + res);
         }
         
 

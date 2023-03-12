@@ -1,6 +1,6 @@
 public class Postfijo {
-    private String[] expresion;
-    private Pila pila;
+    protected String[] expresion;
+    protected Pila pila;
     private String[] postfijo;
 
     public Postfijo(Pila pila, String expresion){
@@ -125,7 +125,7 @@ public class Postfijo {
         return pila.popi();
     }
 
-    public int evaluar(int op1,int i, int op2){
+    private int evaluar(int op1,int i, int op2){
         if(postfijo[i].equals("+")){
             return (op1 + op2);
         }if(postfijo[i].equals("*")){

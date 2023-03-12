@@ -73,6 +73,14 @@ public class Pila{
     }
 
     /**
+     * 
+     * @return primer valor de la cola
+     */
+    int topi(){
+        return head.getval();
+    }
+
+    /**
      * geter
      * @return tamaño de la cola
      */
